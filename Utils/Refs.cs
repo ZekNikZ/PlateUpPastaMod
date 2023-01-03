@@ -16,6 +16,7 @@ namespace KitchenPastaMod
     internal class Refs
     {
         #region Vanilla References
+        public static Item Apple => Find<Item>(ItemReferences.Apple);
         public static Item CrackedEgg => Find<Item>(ItemReferences.EggCracked);
         public static Item DoughBall => Find<Item>(ItemReferences.Dough);
         public static Item Egg => Find<Item>(ItemReferences.Egg);
@@ -32,6 +33,7 @@ namespace KitchenPastaMod
 
         #region Modded References
         public static Item RawPasta => Find<Item, RawPasta>();
+        public static Item Salt => Find<Item, Salt>();
         public static Dish TestDish => Find<Dish, TestDish>();
         #endregion
 

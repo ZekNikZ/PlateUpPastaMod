@@ -9,12 +9,12 @@ using UnityEngine;
 
 namespace KitchenPastaMod.Items
 {
-    public class RawPasta : CustomItemGroup
+    public class RawPastaInPot : CustomItemGroup
     {
-        public override string UniqueNameID => "Z Raw Penne";
+        public override string UniqueNameID => "Z Raw Penne - In Pot";
         public override GameObject Prefab => Prefabs.UncookedPasta;
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
+        public override ItemStorage ItemStorageFlags => ItemStorage.None;
 
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
@@ -24,8 +24,18 @@ namespace KitchenPastaMod.Items
                 Max = 2,
                 Items = new List<Item>
                 {
-                    Refs.CrackedEgg,
-                    Refs.Flour
+                    Refs.Salt,
+                    Refs.Water
+                }
+            },
+            new ItemGroup.ItemSet()
+            {
+                Min = 1,
+                Max = 1,
+                IsMandatory = true,
+                Items = new List<Item>
+                {
+                    Refs.Pot
                 }
             }
         };

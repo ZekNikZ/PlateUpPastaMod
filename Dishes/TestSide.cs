@@ -10,58 +10,59 @@ using UnityEngine;
 
 namespace KitchenPastaMod.Dishes
 {
-    public class TestDish : ModDish
+    public class TestSide : ModDish
     {
-        public override string UniqueNameID => "Penne";
-        public override DishType Type => DishType.Base;
+        public override string UniqueNameID => "Meatballs";
+        public override DishType Type => DishType.Side;
         public override CardType CardType => CardType.Default;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
-        public override GameObject DisplayPrefab => Prefabs.UncookedPasta;
-        public override GameObject IconPrefab => Prefabs.UncookedPasta;
+        public override GameObject DisplayPrefab => Prefabs.Apple;
+        public override GameObject IconPrefab => Prefabs.Apple;
 
         public override List<string> StartingNameSet => new List<string> {
-            "Penne for your thoughts",
-            "Pasta la Vista"
         };
 
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
 
         public override bool IsUnlockable => true;
 
-        public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
+        public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
 
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>
         {
-            Refs.Plate,
-            Refs.Flour,
-            Refs.Egg,
-            Refs.Water,
-            Refs.Tomato,
-            Refs.Pot
+            Refs.Apple
         };
 
         public override HashSet<Process> RequiredProcesses => new HashSet<Process>
         {
-            Refs.Cook,
-            Refs.Chop
         };
 
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>()
         {
             new Dish.MenuItem()
             {
-                Item = Refs.RawPasta
+                Item = Refs.Apple
             }
         };
 
         public override IDictionary<Locale, string> LocalisedRecipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Make Pasta" }
+            { Locale.English, "Make Apple" }
         };
 
         public override IDictionary<Locale, UnlockInfo> LocalisedInfo => new Dictionary<Locale, UnlockInfo>
         {
-            { Locale.English, LocalisationUtils.CreateUnlockInfo("Test Dish", "Test Dish Description", "Test Dish Flavour Text") }
+            { Locale.English, LocalisationUtils.CreateUnlockInfo("Test Side", "Test Side Description", "Test Side Flavour Text") }
+        };
+
+        public override HashSet<Dish> PrerequisiteDishesEditor => new HashSet<Dish>()
+        {
+            Refs.TestDish
+        };
+
+        public override List<Unlock> HardcodedRequirements => new List<Unlock>()
+        {
+            Refs.TestDish
         };
     }
 }

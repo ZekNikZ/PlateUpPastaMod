@@ -15,6 +15,7 @@ namespace KitchenPastaMod
     internal class Prefabs
     {
         public static GameObject UncookedPasta => FindPrefab(ItemReferences.Potato);
+        public static GameObject Apple => FindPrefab(ItemReferences.Apple);
 
         private static GameObject FindPrefab(int id)
         {

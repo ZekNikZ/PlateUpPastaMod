@@ -6,6 +6,7 @@ using KitchenLib.Event;
 using KitchenLib.References;
 using KitchenLib.Utils;
 using KitchenMods;
+using KitchenPastaMod.Appliances;
 using KitchenPastaMod.Dishes;
 using KitchenPastaMod.Items;
 using PastaMod.Registry;
@@ -45,8 +46,17 @@ namespace KitchenPastaMod
             // For log file output so the official plateup support staff can identify if/which a mod is being used
             LogWarning($"{MOD_GUID} v{MOD_VERSION} in use!");
 
+            // Items
             AddGameDataObject<RawPasta>();
+            //AddGameDataObject<RawPastaInPot>();
+            //AddGameDataObject<Salt>();
+
+            // Appliances
+            //AddGameDataObject<SaltProvider>();
+
+            // Dishes
             AddGameDataObject<TestDish>();
+            AddGameDataObject<TestSide>();
 
             MenuItemQuery = GetEntityQuery(new QueryHelper()
                 .All(typeof(CDishChoice)));
