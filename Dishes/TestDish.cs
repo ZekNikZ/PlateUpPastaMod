@@ -72,15 +72,5 @@ namespace KitchenPastaMod.Dishes
                 return info;
             }
         }
-
-        public override IDictionary<Locale, CustomUnlockInfo> LocalisedInfo => new Dictionary<Locale, CustomUnlockInfo>
-        {
-            { Locale.English, new CustomUnlockInfo
-            {
-                Name = "Test Dish",
-                Description = "Test Dish Description",
-                FlavourText = "Test Dish Flavor Text"
-            } }
-        };
     }
 }
