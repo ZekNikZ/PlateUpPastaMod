@@ -8,6 +8,7 @@ using KitchenLib.Utils;
 using KitchenMods;
 using KitchenPastaMod.Dishes;
 using KitchenPastaMod.Items;
+using PastaMod.Registry;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -52,20 +53,7 @@ namespace KitchenPastaMod
 
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
             {
-                // Localize the recipe name
-                //args.gamedata.GlobalLocalisation.Recipes.Info.Get(Locale.English).Text.Add(Refs.TestDish, "TestDish");
-
-                // Construct the Dish (Unlock) localization object
-                LocalisationObject<UnlockInfo> info = new LocalisationObject<UnlockInfo>();
-                UnlockInfo unlockInfo = ScriptableObject.CreateInstance<UnlockInfo>();
-                unlockInfo.Name = "Test Dish";
-                unlockInfo.Description = "Test Dish Description";
-                unlockInfo.FlavourText = "Test Dish Flavor Text";
-                info.Add(Locale.English, unlockInfo);
-
-                // Assign and initialize the localization to the dish
-                Refs.TestDish.Info = info;
-                Refs.TestDish.Localise(Locale.English, args.gamedata.Substitutions);
+                ModRegistry.HandleBuildGameDataEvent(args);
             };
         }
 

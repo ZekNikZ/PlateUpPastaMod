@@ -15,21 +15,25 @@ namespace KitchenPastaMod
 {
     internal class Refs
     {
-        public static Item DoughBall => Find<Item>(ItemReferences.Dough);
+        #region Vanilla References
         public static Item CrackedEgg => Find<Item>(ItemReferences.EggCracked);
-        public static Item TomatoSauce => Find<Item>(ItemReferences.TomatoSauce);
-        public static Item Pot => Find<Item>(ItemReferences.Pot);
+        public static Item DoughBall => Find<Item>(ItemReferences.Dough);
+        public static Item Egg => Find<Item>(ItemReferences.Egg);
+        public static Item Flour => Find<Item>(ItemReferences.Flour);
         public static Item GratedCheese => Find<Item>(ItemReferences.CheeseGrated);
         public static Item Plate => Find<Item>(ItemReferences.Plate);
-        public static Item Flour => Find<Item>(ItemReferences.Flour);
-        public static Item Egg => Find<Item>(ItemReferences.Egg);
-        public static Item Water => Find<Item>(ItemReferences.Water);
+        public static Item Pot => Find<Item>(ItemReferences.Pot);
         public static Item Tomato => Find<Item>(ItemReferences.Tomato);
-        public static Process Cook => Find<Process>(ProcessReferences.Cook);
+        public static Item TomatoSauce => Find<Item>(ItemReferences.TomatoSauce);
+        public static Item Water => Find<Item>(ItemReferences.Water);
         public static Process Chop => Find<Process>(ProcessReferences.Chop);
+        public static Process Cook => Find<Process>(ProcessReferences.Cook);
+        #endregion
 
+        #region Modded References
         public static Item RawPasta => Find<Item, RawPasta>();
         public static Dish TestDish => Find<Dish, TestDish>();
+        #endregion
 
         private static T Find<T>(int id) where T: GameDataObject
         {

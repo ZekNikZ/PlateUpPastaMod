@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace KitchenPastaMod.Dishes
 {
-    public class TestDish : CustomDish
+    public class TestDish : ModDish
     {
         public override string UniqueNameID => "Penne";
         public override DishType Type => DishType.Base;
@@ -20,8 +20,7 @@ namespace KitchenPastaMod.Dishes
 
         public override List<string> StartingNameSet => new List<string> {
             "Penne for your thoughts",
-            "Pasta la Vista",
-            ""
+            "Pasta la Vista"
         };
 
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
@@ -51,6 +50,37 @@ namespace KitchenPastaMod.Dishes
             {
                 Item = Refs.RawPasta
             }
+        };
+
+        public override IDictionary<Locale, string> LocalisedRecipe => new Dictionary<Locale, string>
+        {
+            { Locale.English, "Make Pasta" }
+        };
+
+        public override LocalisationObject<UnlockInfo> Info
+        {
+            get
+            {
+                var info = new LocalisationObject<UnlockInfo>();
+
+                var english = ScriptableObject.CreateInstance<UnlockInfo>();
+                english.Name = "Test Dish";
+                english.Description = "Test Dish Description";
+                english.FlavourText = "Test Dish Flavour Text";
+                info.Add(Locale.English, english);
+
+                return info;
+            }
+        }
+
+        public override IDictionary<Locale, CustomUnlockInfo> LocalisedInfo => new Dictionary<Locale, CustomUnlockInfo>
+        {
+            { Locale.English, new CustomUnlockInfo
+            {
+                Name = "Test Dish",
+                Description = "Test Dish Description",
+                FlavourText = "Test Dish Flavor Text"
+            } }
         };
     }
 }
