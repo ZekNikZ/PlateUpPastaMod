@@ -16,7 +16,7 @@ namespace KitchenPastaMod.Items
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
 
-        public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
+        public override List<ItemGroup.ItemSet> Sets => new()
         {
             new ItemGroup.ItemSet()
             {

@@ -46,13 +46,14 @@ namespace KitchenPastaMod
             // For log file output so the official plateup support staff can identify if/which a mod is being used
             LogWarning($"{MOD_GUID} v{MOD_VERSION} in use!");
 
+            // Appliances
+            AddGameDataObject<SaltProvider>();
+
             // Items
             AddGameDataObject<RawPasta>();
-            //AddGameDataObject<RawPastaInPot>();
-            //AddGameDataObject<Salt>();
-
-            // Appliances
-            //AddGameDataObject<SaltProvider>();
+            AddGameDataObject<SaltIngredient>();
+            AddGameDataObject<Salt>();
+            AddGameDataObject<UnboiledWater>();
 
             // Dishes
             AddGameDataObject<TestDish>();

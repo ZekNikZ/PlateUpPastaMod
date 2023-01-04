@@ -9,14 +9,14 @@ using UnityEngine;
 
 namespace KitchenPastaMod.Items
 {
-    public class RawPastaInPot : CustomItemGroup
+    public class UnboiledWater : CustomItemGroup
     {
-        public override string UniqueNameID => "Z Raw Penne - In Pot";
-        public override GameObject Prefab => Prefabs.UncookedPasta;
+        public override string UniqueNameID => "Z Unboiled Water";
+        public override GameObject Prefab => Prefabs.UncookedPastaInPot;
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.None;
 
-        public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
+        public override List<ItemGroup.ItemSet> Sets => new()
         {
             new ItemGroup.ItemSet()
             {
@@ -24,7 +24,7 @@ namespace KitchenPastaMod.Items
                 Max = 2,
                 Items = new List<Item>
                 {
-                    Refs.Salt,
+                    Refs.SaltIngredient,
                     Refs.Water
                 }
             },

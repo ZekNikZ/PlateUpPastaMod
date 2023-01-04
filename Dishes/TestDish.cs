@@ -19,7 +19,8 @@ namespace KitchenPastaMod.Dishes
         public override GameObject DisplayPrefab => Prefabs.UncookedPasta;
         public override GameObject IconPrefab => Prefabs.UncookedPasta;
 
-        public override List<string> StartingNameSet => new List<string> {
+        public override List<string> StartingNameSet => new()
+        {
             "Penne for your thoughts",
             "Pasta la Vista"
         };
@@ -30,7 +31,7 @@ namespace KitchenPastaMod.Dishes
 
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
 
-        public override HashSet<Item> MinimumIngredients => new HashSet<Item>
+        public override HashSet<Item> MinimumIngredients => new()
         {
             Refs.Plate,
             Refs.Flour,
@@ -40,17 +41,17 @@ namespace KitchenPastaMod.Dishes
             Refs.Pot
         };
 
-        public override HashSet<Process> RequiredProcesses => new HashSet<Process>
+        public override HashSet<Process> RequiredProcesses => new()
         {
             Refs.Cook,
             Refs.Chop
         };
 
-        public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>()
+        public override List<Dish.MenuItem> ResultingMenuItems => new()
         {
             new Dish.MenuItem()
             {
-                Item = Refs.RawPasta
+                Item = Refs.RawPastaInPot
             }
         };
 

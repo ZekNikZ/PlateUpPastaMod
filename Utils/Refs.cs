@@ -3,6 +3,7 @@ using KitchenLib;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
+using KitchenPastaMod.Appliances;
 using KitchenPastaMod.Dishes;
 using KitchenPastaMod.Items;
 using System;
@@ -32,8 +33,11 @@ namespace KitchenPastaMod
         #endregion
 
         #region Modded References
+        public static Appliance SaltProvider => Find<Appliance, SaltProvider>();
         public static Item RawPasta => Find<Item, RawPasta>();
+        public static Item RawPastaInPot => Find<Item, UnboiledWater>();
         public static Item Salt => Find<Item, Salt>();
+        public static Item SaltIngredient => Find<Item, SaltIngredient>();
         public static Dish TestDish => Find<Dish, TestDish>();
         #endregion
 
