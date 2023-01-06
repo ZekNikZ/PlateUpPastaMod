@@ -1,6 +1,6 @@
 ﻿using KitchenData;
 using KitchenLib.Customs;
-using PastaMod.Registry;
+using KitchenPastaMod.Registry;
 using System;
 using System.Collections.Generic;
 using System.Linq;

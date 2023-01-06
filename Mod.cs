@@ -1,18 +1,12 @@
 ﻿using Kitchen;
-using KitchenData;
 using KitchenLib;
-using KitchenLib.Customs;
 using KitchenLib.Event;
-using KitchenLib.References;
-using KitchenLib.Utils;
 using KitchenMods;
 using KitchenPastaMod.Appliances;
 using KitchenPastaMod.Dishes;
 using KitchenPastaMod.Items;
-using PastaMod.Registry;
-using System.Linq;
+using KitchenPastaMod.Registry;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;
@@ -30,7 +24,7 @@ namespace KitchenPastaMod
         public const string MOD_VERSION = "0.1.0";
         public const string MOD_AUTHOR = "ZekNikZ";
         public const string MOD_GAMEVERSION = ">=1.1.1";
-        private const bool DEBUG_MODE = true;
+        private const bool DEBUG_MODE = false;
         // Game version this mod is designed for in semver
         // e.g. ">=1.1.1" current and all future
         // e.g. ">=1.1.1 <=1.2.3" for all from/until

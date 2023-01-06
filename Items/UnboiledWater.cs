@@ -1,10 +1,6 @@
 ﻿using KitchenData;
 using KitchenLib.Customs;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace KitchenPastaMod.Items
@@ -15,6 +11,8 @@ namespace KitchenPastaMod.Items
         public override GameObject Prefab => Prefabs.UncookedPastaInPot;
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.None;
+        public override Item DisposesTo => Refs.Pot;
+        public override Item DirtiesTo => Refs.Pot;
 
         public override List<ItemGroup.ItemSet> Sets => new()
         {

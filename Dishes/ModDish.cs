@@ -1,12 +1,7 @@
 ﻿using KitchenData;
 using KitchenLib.Customs;
-using PastaMod.Registry;
-using System;
+using KitchenPastaMod.Registry;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 
 namespace KitchenPastaMod.Dishes
 {
@@ -35,6 +30,11 @@ namespace KitchenPastaMod.Dishes
         {
             Dish dish = gameDataObject as Dish;
             ModRegistry.AddLocalisedRecipe(this, dish);
+            
+            if (Type == DishType.Base)
+            {
+                ModRegistry.AddBaseDish(dish);
+            }
         }
     }
 }

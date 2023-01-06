@@ -1,11 +1,6 @@
 ﻿using KitchenData;
-using KitchenLib.Customs;
 using KitchenLib.Utils;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace KitchenPastaMod.Dishes
@@ -38,7 +33,8 @@ namespace KitchenPastaMod.Dishes
             Refs.Egg,
             Refs.Water,
             Refs.Tomato,
-            Refs.Pot
+            Refs.Pot,
+            Refs.Salt
         };
 
         public override HashSet<Process> RequiredProcesses => new()
