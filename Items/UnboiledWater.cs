@@ -14,13 +14,15 @@ namespace KitchenPastaMod.Items
         public override Item DisposesTo => Refs.Pot;
         public override Item DirtiesTo => Refs.Pot;
 
+        public override bool CanContainSide => true;
+
         public override List<ItemGroup.ItemSet> Sets => new()
         {
             new ItemGroup.ItemSet()
             {
                 Min = 2,
                 Max = 2,
-                Items = new List<Item>
+                Items = new()
                 {
                     Refs.SaltIngredient,
                     Refs.Water
@@ -31,7 +33,7 @@ namespace KitchenPastaMod.Items
                 Min = 1,
                 Max = 1,
                 IsMandatory = true,
-                Items = new List<Item>
+                Items = new()
                 {
                     Refs.Pot
                 }

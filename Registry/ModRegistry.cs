@@ -18,6 +18,8 @@ namespace KitchenPastaMod.Registry
         private static readonly List<Tuple<ModAppliance, Appliance>> PostInitApplianceProperties = new();
         private static readonly List<Dish> BaseDishes = new();
 
+        private static bool GameDataBuilt = false;
+
         public static void AddLocalisedRecipe(ILocalisedRecipeHolder holder, Dish dish)
         {
             RecipeHolders.Add(new Tuple<ILocalisedRecipeHolder, Dish>(holder, dish));
@@ -35,6 +37,11 @@ namespace KitchenPastaMod.Registry
 
         public static void HandleBuildGameDataEvent(BuildGameDataEventArgs args)
         {
+            if (GameDataBuilt)
+            {
+                return;
+            }
+
             // Recipe holders
             foreach (var holder in RecipeHolders)
             {
@@ -53,6 +60,10 @@ namespace KitchenPastaMod.Registry
                     applianceEntry.Item2.Properties.Add(prop);
                 }
             }
+
+            Mod.LogInfo("Done building additional game data.");
+
+            GameDataBuilt = true;
         }
 
         protected override void Initialise()
@@ -62,9 +73,8 @@ namespace KitchenPastaMod.Registry
 
         protected override void OnUpdate()
         {
-            NativeArray<CUpgrade> existing = Upgrades.ToComponentDataArray<CUpgrade>(Allocator.Temp);
-
             // Base dishes
+            NativeArray<CUpgrade> existing = Upgrades.ToComponentDataArray<CUpgrade>(Allocator.Temp);
             foreach (var dish in BaseDishes)
             {
                 foreach (CUpgrade item in existing)

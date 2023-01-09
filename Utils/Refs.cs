@@ -28,11 +28,12 @@ namespace KitchenPastaMod
 
         #region Modded References
         public static Appliance SaltProvider => Find<Appliance, SaltProvider>();
-        public static Item RawPasta => Find<Item, RawPasta>();
-        public static Item RawPastaInPot => Find<Item, UnboiledWater>();
+        public static ItemGroup RawPasta => Find<ItemGroup, RawPasta>();
+        public static ItemGroup RawPastaInPot => Find<ItemGroup, UnboiledWater>();
         public static Item Salt => Find<Item, Salt>();
         public static Item SaltIngredient => Find<Item, SaltIngredient>();
         public static Dish TestDish => Find<Dish, TestDish>();
+        public static Dish TestSide => Find<Dish, TestSide>();
         #endregion
 
         private static T Find<T>(int id) where T: GameDataObject
@@ -42,7 +43,7 @@ namespace KitchenPastaMod
 
         private static T Find<T, C>() where T : GameDataObject where C : CustomGameDataObject
         {
-            return (T)GDOUtils.GetCustomGameDataObject<C>().GameDataObject;
+            return (T)GDOUtils.GetCustomGameDataObject<C>()?.GameDataObject;
         }
     }
 }

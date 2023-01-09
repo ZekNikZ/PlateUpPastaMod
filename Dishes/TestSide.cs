@@ -14,7 +14,8 @@ namespace KitchenPastaMod.Dishes
         public override GameObject DisplayPrefab => Prefabs.Apple;
         public override GameObject IconPrefab => Prefabs.Apple;
 
-        public override List<string> StartingNameSet => new List<string> {
+        public override List<string> StartingNameSet => new()
+        {
         };
 
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
@@ -23,20 +24,22 @@ namespace KitchenPastaMod.Dishes
 
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
 
-        public override HashSet<Item> MinimumIngredients => new HashSet<Item>
+        public override HashSet<Item> MinimumIngredients => new()
         {
-            Refs.Apple
+            Refs.Flour,
+            Refs.Egg
         };
 
-        public override HashSet<Process> RequiredProcesses => new HashSet<Process>
+        public override HashSet<Process> RequiredProcesses => new()
         {
         };
 
-        public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>()
+        public override List<Dish.MenuItem> ResultingMenuItems => new()
         {
             new Dish.MenuItem()
             {
-                Item = Refs.Apple
+                Item = Refs.RawPasta,
+                Phase = MenuPhase.Side
             }
         };
 

@@ -7,7 +7,7 @@ namespace KitchenPastaMod.Items
     public class Salt: CustomItem
     {
         public override string UniqueNameID => "Z Salt";
-        public override GameObject Prefab => Prefabs.Oil;
+        public override GameObject Prefab => Prefabs.Apple;
         public override bool AllowSplitMerging => true;
         public override bool IsIndisposable => true;
         public override ItemValue ItemValue => ItemValue.Small;

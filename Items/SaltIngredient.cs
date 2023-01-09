@@ -12,7 +12,7 @@ namespace KitchenPastaMod.Items
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Small;
 
-        public override GameObject Prefab => Prefabs.Oil;
+        public override GameObject Prefab => Prefabs.Apple;
 
         public override int Reward => 3;
     }
